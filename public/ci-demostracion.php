@@ -1,3 +1,2 @@
 <?php
-if (true {
-    echo "Esta rama se usa para mostrar cómo CI detecta un error de sintaxis.";
+// Archivo auxiliar para demostrar la verificacion automatica de sintaxis.
