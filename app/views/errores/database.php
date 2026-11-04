@@ -1,0 +1,1 @@
+<section class="error-page"><span class="error-code">⌁</span><p class="eyebrow">CONEXIÓN PENDIENTE</p><h1>No pudimos conectar con MySQL.</h1><p>Inicia MySQL y confirma la base de datos y las credenciales en <code>config/database.php</code>.</p><a class="button button-secondary" href="<?= e(url()) ?>">Intentar de nuevo</a></section>

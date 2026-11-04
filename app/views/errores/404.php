@@ -1,0 +1,1 @@
+<section class="error-page"><span class="error-code">404</span><p class="eyebrow">NO ENCONTRAMOS ESA PÁGINA</p><h1>Este enlace ya no está disponible.</h1><p>Vuelve al catálogo para continuar administrando tus productos.</p><a class="button button-primary" href="<?= e(url()) ?>">Ir al catálogo</a></section>

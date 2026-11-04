@@ -1,0 +1,1 @@
+<section class="error-page"><span class="error-code">!</span><p class="eyebrow">SESIÓN VENCIDA</p><h1>Este formulario ya no es válido.</h1><p>Por seguridad, vuelve al catálogo y abre un formulario nuevo antes de guardar.</p><a class="button button-primary" href="<?= e(url()) ?>">Volver al catálogo</a></section>
