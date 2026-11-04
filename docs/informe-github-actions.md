@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Automatizar la revisión de sintaxis PHP del catálogo cada vez que se envía un cambio a las ramas `main` o `master`, y cuando se abre una solicitud de integración hacia ellas.
+Automatizar la revisión de sintaxis PHP del catálogo cada vez que se envía un cambio a `main` o `master`, y cuando se abre o actualiza una solicitud de integración hacia esas ramas.
 
 ## Flujo configurado
 
@@ -13,15 +13,12 @@ El archivo `.github/workflows/ci.yml` ejecuta estos pasos en una máquina Ubuntu
 3. Ejecuta `php -l` sobre los archivos PHP de `app/`, `config/`, `public/` y el punto de entrada raíz.
 4. Marca el flujo como exitoso si todos los archivos tienen sintaxis válida; de lo contrario, lo marca como fallido y muestra el archivo con el error.
 
-## Resultados en GitHub
+## Resultados comprobados en GitHub
 
-Completa esta sección después de ejecutar el flujo en el repositorio:
-
-- Ejecución exitosa: pega el enlace de la ejecución verde de **Actions**.
-- Ejecución fallida controlada: pega el enlace de la ejecución roja de **Actions**.
-- Corrección aplicada: indica el archivo corregido y pega el enlace de la ejecución verde posterior.
-
-La comprobación local antes de subir el proyecto pasó para los 16 archivos PHP. Esto sirve como revisión previa, pero no reemplaza los enlaces de las dos ejecuciones de GitHub solicitadas por la práctica.
+- **Ejecución exitosa en `main`:** [flujo inicial completado correctamente](https://github.com/gomezjhan-spec/catalogo-mvc/actions/runs/41912782320).
+- **Fallo controlado en la PR #1:** [flujo que detectó el error de sintaxis](https://github.com/gomezjhan-spec/catalogo-mvc/actions/runs/41913792750). El registro señala `public/ci-demostracion.php` y un error de sintaxis en la línea 3.
+- **Corrección verificada:** [flujo exitoso después de corregir el archivo](https://github.com/gomezjhan-spec/catalogo-mvc/actions/runs/41914018328).
+- **Solicitud de integración de demostración:** [PR #1](https://github.com/gomezjhan-spec/catalogo-mvc/pull/1), abierta y sin fusionar. El ejemplo permanece en una rama aparte; `main` no contiene el archivo con error.
 
 ## Análisis
 
@@ -36,3 +33,5 @@ El flujo automático repite la misma revisión en cada cambio y señala el archi
 ## Conclusión
 
 GitHub Actions ejecuta una revisión corta y repetible del código PHP. La ejecución fallida muestra que un error se detecta; la corrección seguida de una ejecución exitosa demuestra el ciclo de revisión antes de continuar con el proyecto.
+
+La revisión de sintaxis local también pasó para los 16 archivos PHP del proyecto antes de publicarlo. Para que GitHub impida integrar cambios cuando CI falla, se debe activar la protección de `main` y exigir que el control pase.
